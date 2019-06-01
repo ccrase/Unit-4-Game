@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+<body>
+    <h3 id="numToGuess">Random Number: </h3>
+
+    <h4 id="crystal1">1</h4>
+    <h4 id="crystal2">2</h4>
+    <h4 id="crystal3">3</h4>
+    <h4 id="crystal4">4</h4>
+
+    <h3 id="score">Total Score:</h3>
+
+    <h3 id="wins">WINS: </h3>
+    <h3 id="loss"> LOSS: </h3>
+
+
+
+
+
+
+
+</body>
+    <script>
+var score = 0;
+var wins = 0;
+var loss = 0;
+var gameStart = false;
+var numToGuess;
+var crystal1;
+var crystal2;
+var crystal3;
+var crystal4;
+
+resetGame();
+function resetGame(){
+    score = 0;
+    numToGuess = Math.floor((Math.random() * (120-19)) + 19);
+    crystal1 = Math.floor((Math.random() * 12) + 1);
+    crystal2 = Math.floor((Math.random() * 12) + 1);
+    crystal3 = Math.floor((Math.random() * 12) + 1);
+    crystal4 = Math.floor((Math.random() * 12) + 1); 
+    resetDom();
+    console.log(crystal1,crystal2, crystal3, crystal4, numToGuess);
+
+};
+
+function startGame(){
+    if(!gameStart){
+        gameStart = true;
+        guessClicks();
+    }
+}
+
+function resetDom(){
+    $('#score').text("Total Score: " + score);
+    $('#numToGuess').text("Random Number: " + numToGuess);
+    startGame();
+};
+
+function guessClicks(){
+        $('#crystal1').on('click', function(){
+        score += crystal1;
+        updateDom();
+        checkWin();
+        });
+
+        $('#crystal2').on('click', function(){
+        score += crystal2;
+        updateDom();
+        checkWin();
+        });
+
+        $('#crystal3').on('click', function(){
+        score += crystal3;
+        updateDom();
+        checkWin();
+        });
+
+        $('#crystal4').on('click', function(){
+        score += crystal4;
+        updateDom();
+        checkWin();
+        });
+};
+
+function checkWin(){
+    if(score === numToGuess){
+        wins++
+        $('#wins').text("WINS: " + wins);
+        resetGame();
+    }
+    else if(score > numToGuess){
+        loss++;
+        $('#loss').text("LOSS: " + loss);      
+        resetGame(); 
+        
+    };
+};
+
+function updateDom(){
+    $('#score').text("Total Score: " + score);
+};
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</html>

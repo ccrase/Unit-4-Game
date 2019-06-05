@@ -1,9 +1,62 @@
 .container{
-    margin-top: 50px;
+    margin-top: 20px;
     position: absolute;
     width: 60%;
     left: 19%;
-    padding: 20px;
+    padding: 10px 10px 20px 10px;
     background-color: #f7eedd;
+    color: #28332f;
+    border-radius: 8px;
+    border: 1px solid #666666;
     text-align: center;
+}
+h1{
+    font-family: 'Monoton', cursive;
+    font-size: 70px;
+    margin: 5px;
+
+}
+img{
+    padding: 15px 15px 0 15px;
+}
+.trackerDiv{
+    border: 1px solid #666666;
+    border-radius: 8px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    width: 30%;
+    height: 100px;
+    padding: 10px;
+    text-align: left;
+}
+h3{
+    padding: 10px;
+    font-family: 'Black Ops One', cursive;
+    font-size: 24px;
+}
+h4{
+    font-family: 'Black Ops One', cursive;
+    font-size: 16px;
+
+}
+
+.missing{
+    width: 100%;
+}
+
+
+.rules{
+    border: 1px solid #666666;
+    border-radius: 8px;
+    width: 80%;
+    padding: 10px;
+    margin: auto;
+}
+#appear{
+    display: none;
+    position: absolute;
+    opacity: 0;
+    right: 30%;
+    bottom: 15%;
+
 }
